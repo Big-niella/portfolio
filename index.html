@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio Website</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <a href="#" class="logo">
+        <img src="image/logo.jpeg" alt="Logo" />
+      </a>
+
+      <div class="container">
+        <nav class="d-flex justify-content-end">
+          <a href="#">Home</a>
+          <a href="javascript:void(0)" onclick="toggleSection('services')"
+            >Services</a
+          >
+          <a href="javascript:void(0)" onclick="toggleSection('skills')"
+            >Skills</a
+          >
+          <a href="javascript:void(0)" onclick="toggleSection('experience')"
+            >Experience</a
+          >
+          <a href="javascript:void(0)" onclick="toggleSection('portfolio')"
+            >Portfolio</a
+          >
+          <a href="javascript:void(0)" onclick="toggleSection('contact')"
+            >Contact</a
+          >
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- HOME -->
+    <section class="home">
+      <div class="container mt-5">
+        <div class="home-row">
+          <div class="home-img">
+            <img src="image/background.jpeg.jpeg" alt="" />
+          </div>
+
+          <div class="home-container">
+            <h1>Hey it's Daniella</h1>
+            <h3 class="typing-text">I'm a <span></span></h3>
+
+            <p>
+              I am an aspiring front-end web developer with a passion for
+              creating clean, responsive, and user-friendly websites. I enjoy
+              bringing ideas to life through code.
+            </p>
+
+            <div class="social-icons">
+              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="#"><i class="fa-brands fa-github"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+
+            <a href="#" class="btn" onclick="hireMe()">Hire me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <div id="services" class="content">
+      <span class="close-icon" onclick="toggleSection('')">&times;</span>
+      <div class="content-container">
+        <img src="image/background.jpeg.jpeg" class="profile-img" />
+
+        <div class="text">
+          I offer website design and development services focused on creating
+          responsive and well-structured web pages. I specialize in building
+          portfolio websites, landing pages, and simple frontend interfaces
+          using HTML, CSS, Bootstrap, and JavaScript.
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div id="skills" class="content">
+      <span class="close-icon" onclick="toggleSection('')">&times;</span>
+      <div class="content-container">
+        <img src="image/background.jpeg.jpeg" class="profile-img" />
+
+        <div class="text">
+          I possess strong foundational skills in HTML, CSS, and Bootstrap,
+          along with working knowledge of JavaScript and basic C++ programming.
+          I focus on building responsive and visually appealing interfaces.
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div id="experience" class="content">
+      <span class="close-icon" onclick="toggleSection('')">&times;</span>
+      <div class="content-container">
+        <img src="image/background.jpeg.jpeg" class="profile-img" />
+
+        <div class="text">
+          I have gained experience through personal projects where I designed
+          and developed responsive websites. I continuously improve my skills by
+          practicing and building modern web interfaces.
+        </div>
+      </div>
+    </div>
+    <!-- PORTFOLIO -->
+    <div id="portfolio" class="content">
+      <span class="close-icon" onclick="toggleSection('')">&times;</span>
+
+      <h2>My Projects</h2>
+      <p>Here are some of the designs I have built from scratch.</p>
+
+      <div class="content-container">
+        <div class="project-card">
+          <img src="image/WhatsApp Image 2026-04-05 at 2.32.47 PM.jpeg" />
+          <p class="text">Project 1 - Bright Future of Web</p>
+        </div>
+
+        <div class="project-card">
+          <img src="image/Screenshot_10-4-2026_62134_127.0.0.1.jpeg" />
+          <p class="text">Project 2 - Contact Form</p>
+        </div>
+
+        <div class="project-card">
+          <img src="image/WhatsApp Image 2026-04-05 at 2.30.37 PM.jpeg" />
+          <p class="text">Project 3 - Sunny Side</p>
+        </div>
+      </div>
+    </div>
+    <!-- CONTACT -->
+    <div id="contact" class="content">
+      <span class="close-icon" onclick="toggleSection('')">&times;</span>
+      <div class="content-container">
+        <!--ICONS FIRST-->
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#"><i class="fa-brands fa-github"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <!--FORM BELOW-->
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- JavaScript -->
+    <script>
+      function toggleSection(id) {
+        const allSections = document.querySelectorAll(".content");
+
+        allSections.forEach((section) => {
+          if (section.id === id) {
+            section.style.display = "block";
+          } else {
+            section.style.display = "none";
+          }
+        });
+      }
+
+      function hireMe() {
+        alert("Thanks for your interest! I will contact you soon 😊");
+      }
+
+      // Animation
+      $(document).ready(function () {
+        $(".home-container").addClass("show");
+      });
+
+      // Typing Effect
+      const text = [
+        "Web Developer",
+        "Web Designer",
+        "Biomedical Engineer",
+        "Cyber Security Specialist",
+      ];
+
+      let i = 0,
+        j = 0,
+        currentText = "",
+        isDeleting = false;
+
+      function type() {
+        currentText = text[i];
+
+        if (!isDeleting) {
+          document.querySelector(".typing-text span").textContent =
+            currentText.substring(0, j++);
+          if (j > currentText.length) {
+            isDeleting = true;
+            setTimeout(type, 1000);
+            return;
+          }
+        } else {
+          document.querySelector(".typing-text span").textContent =
+            currentText.substring(0, j--);
+          if (j < 0) {
+            isDeleting = false;
+            i = (i + 1) % text.length;
+          }
+        }
+
+        setTimeout(type, isDeleting ? 50 : 100);
+      }
+
+      type();
+      function toggleSection(id) {
+        const allSections = document.querySelectorAll(".content");
+
+        if (id === "") {
+          allSections.forEach((section) => (section.style.display = "none"));
+          return;
+        }
+
+        allSections.forEach((section) => {
+          if (section.id === id) {
+            section.style.display = "block";
+          } else {
+            section.style.display = "none";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
